@@ -1,4 +1,33 @@
+function rednerBooks() {
+  const booksWrapper = document.querySelector('.books');
 
+  const books = getBooks();
+  console.log(books)
+  
+  booksWrapper.innerHTML = 
+  `<div class="book">
+    <figure class="book__img--wrapper">
+      <img class="book__img" src="${books[0].url}" alt="" />
+    </figure>
+    <div class="book__title">
+    ${books[0].title}
+    </div>
+    <div class="book__ratings">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <div class="book__price">
+      <span class="book__price--normal">${books[0].originalPrice}</span> $14.95
+    </div>
+  </div>`
+}
+
+setTimeout(() => {
+  rednerBooks();
+});
 
 // FAKE DATA
 function getBooks() {
